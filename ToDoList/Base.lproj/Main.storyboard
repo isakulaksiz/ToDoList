@@ -42,37 +42,59 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="57Q-4J-aBS">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="TCa-Rp-ZTg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="TCa-Rp-ZTg">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="oKe-Z0-qiE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tavleView" destination="uWt-Wx-MBQ" id="JgP-RH-J6L"/>
+                        <outlet property="tableView" destination="uWt-Wx-MBQ" id="UNN-R5-ObW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="904" y="80"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="nMw-Yc-5Ci">
             <objects>
-                <viewController id="NX0-sz-I4e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="entry" id="NX0-sz-I4e" customClass="EntryViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SWa-R4-gTH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-Zo-sr4">
+                                <rect key="frame" x="20" y="64" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="FgD-8b-3Ay"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7IS-AH-rvs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="separatorColor"/>
+                        <constraints>
+                            <constraint firstItem="geZ-Zo-sr4" firstAttribute="top" secondItem="7IS-AH-rvs" secondAttribute="top" constant="20" id="QaJ-y0-6aO"/>
+                            <constraint firstItem="7IS-AH-rvs" firstAttribute="trailing" secondItem="geZ-Zo-sr4" secondAttribute="trailing" constant="20" id="YUL-pk-stm"/>
+                            <constraint firstItem="geZ-Zo-sr4" firstAttribute="leading" secondItem="7IS-AH-rvs" secondAttribute="leading" constant="20" id="iuj-wd-DyZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="geZ-Zo-sr4" id="5fq-Dm-VZU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbP-WK-wb7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078" y="834"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="JsI-W8-fZC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXi-Rb-Pm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="oLM-RE-eVP" sceneMemberID="viewController"/>
+                <viewController storyboardIdentifier="task" id="oLM-RE-eVP" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="1872" y="80"/>
         </scene>
@@ -96,6 +118,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
