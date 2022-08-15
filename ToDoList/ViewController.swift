@@ -29,9 +29,16 @@ class ViewController: UIViewController {
     }
     
     func updateTasks(){
+        tasks.removeAll()
         guard let count = UserDefaults().value(forKey: "count") as? Int else {
             return
         }
+        for x in 0..<count{
+            if let task = UserDefaults().value(forKey: "task\(x+1)") as? String {
+                tasks.append(task)
+            }
+        }
+        tableView.reloadData()
         
     }
     @IBAction func didTapAdd(){
@@ -40,7 +47,7 @@ class ViewController: UIViewController {
         vc.title = "New Task"
         vc.update = {
             DispatchQueue.main.async {
-                self.updateTasks()   <#code#>
+                self.updateTasks()
             }
             
         }
